@@ -22,6 +22,9 @@ app.get("/test", (req, res) => {
 app.use("/api/auth", authRoutes);
 app.use("/api/appointments", appointmentRoutes);
 app.use("/api/lab", labRoutes);
+app.get("/healthz", (req, res) => {
+  res.send("OK");
+});
 
 app.get("/api/reports", (req, res) => {
   const query = "SELECT * FROM reports ORDER BY id DESC";
